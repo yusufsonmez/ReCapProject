@@ -19,10 +19,9 @@ namespace ReCapProject
             //Get all
             foreach (var car in carManager.GetAll())
             {
-                System.Console.WriteLine(car.DailyPrice + " Değerinde " + car.Description);
+                Console.WriteLine("{0} Değerinde {1}", car.DailyPrice, car.Description); //we use this write style because this is less costly for multiple var's to write
             }
-            System.Console.WriteLine("\n");
-
+            Console.WriteLine("\n");
 
 
             //Add new car
@@ -31,7 +30,7 @@ namespace ReCapProject
             //Write the new car
             foreach (var newCar in carManager.GetById(6))
             {
-                System.Console.WriteLine(newCar.Description + " Eklendi\n");
+                Console.WriteLine(newCar.Description + " Eklendi\n");
             }
 
 
@@ -39,9 +38,9 @@ namespace ReCapProject
             //Get all - to see defferance
             foreach (var car in carManager.GetAll())
             {
-                System.Console.WriteLine(car.DailyPrice + " Değerinde " + car.Description);
+                Console.WriteLine("{0} Değerinde {1}", car.DailyPrice, car.Description);
             }
-            System.Console.WriteLine("\n");
+            Console.WriteLine("\n");
 
 
 
@@ -50,7 +49,7 @@ namespace ReCapProject
             {
                 Car newCarToUpdate = new Car { BrandId = 10, ColorId = 10, DailyPrice = 300000, Description = carForUpdateTheCars.Description+ " -Hasarlı", Id = 2, ModelYear = 2019 };
                 carManager.Update(newCarToUpdate);
-                System.Console.WriteLine(carForUpdateTheCars.Id + " id'li araç bilgisi güncellendi\n");
+                Console.WriteLine(carForUpdateTheCars.Id + " id'li araç bilgisi güncellendi\n");
             }
 
             
@@ -58,9 +57,9 @@ namespace ReCapProject
             //Get all - to see defferance
             foreach (var car in carManager.GetAll())
             {
-                System.Console.WriteLine(car.DailyPrice + " Değerinde " + car.Description);
+                Console.WriteLine("{0} Değerinde {1}", car.DailyPrice, car.Description);
             }
-            System.Console.WriteLine("\n");
+            Console.WriteLine("\n");
 
 
 
@@ -68,7 +67,7 @@ namespace ReCapProject
             foreach (var carForDelete in carManager.GetById(3))
             {
                 carManager.Delete(carForDelete);
-                System.Console.WriteLine(carForDelete.Id + "id'li araç silindi\n");
+                Console.WriteLine(carForDelete.Id + "id'li araç silindi\n");
             }
 
 
@@ -76,10 +75,10 @@ namespace ReCapProject
             //Get all - to see defferance
             foreach (var car in carManager.GetAll())
             {
-                System.Console.WriteLine(car.DailyPrice + " Değerinde " + car.Description);
+                Console.WriteLine("{0} Değerinde {1}", car.DailyPrice, car.Description);
             }
 
-            System.Console.ReadLine();
+            Console.ReadLine();
 
         }
 
