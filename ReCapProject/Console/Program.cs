@@ -13,10 +13,10 @@ namespace ReCapProject
     {
         static void Main(string[] args)
         {
-            //new car object from InMemoryCarDal()
+            //New car object from InMemoryCarDal()
             CarManager carManager = new CarManager(new InMemoryCarDal());
 
-            //get all
+            //Get all
             foreach (var car in carManager.GetAll())
             {
                 System.Console.WriteLine(car.DailyPrice + " Değerinde " + car.Description);
@@ -25,10 +25,10 @@ namespace ReCapProject
 
 
 
-            //add new car
+            //Add new car
             carManager.Add(new Car{ BrandId = 7, ColorId = 5, DailyPrice = 220000, Description = "3 Yıllık Araç -Hasarlı", Id = 6, ModelYear = 2018 });
 
-            //write the new car
+            //Write the new car
             foreach (var newCar in carManager.GetById(6))
             {
                 System.Console.WriteLine(newCar.Description + " Eklendi\n");
@@ -36,7 +36,7 @@ namespace ReCapProject
 
 
 
-            //get all - to see defferance
+            //Get all - to see defferance
             foreach (var car in carManager.GetAll())
             {
                 System.Console.WriteLine(car.DailyPrice + " Değerinde " + car.Description);
@@ -45,7 +45,7 @@ namespace ReCapProject
 
 
 
-            //update a car - add "-Hasarlı" word
+            //Update a car - add "-Hasarlı" word
             foreach (var carForUpdateTheCars in carManager.GetById(2))
             {
                 Car newCarToUpdate = new Car { BrandId = 10, ColorId = 10, DailyPrice = 300000, Description = carForUpdateTheCars.Description+ " -Hasarlı", Id = 2, ModelYear = 2019 };
@@ -55,7 +55,7 @@ namespace ReCapProject
 
             
             
-            //get all - to see defferance
+            //Get all - to see defferance
             foreach (var car in carManager.GetAll())
             {
                 System.Console.WriteLine(car.DailyPrice + " Değerinde " + car.Description);
@@ -64,7 +64,7 @@ namespace ReCapProject
 
 
 
-            //delete car
+            //Delete car
             foreach (var carForDelete in carManager.GetById(3))
             {
                 carManager.Delete(carForDelete);
@@ -73,7 +73,7 @@ namespace ReCapProject
 
 
             
-            //get all - to see defferance
+            //Get all - to see defferance
             foreach (var car in carManager.GetAll())
             {
                 System.Console.WriteLine(car.DailyPrice + " Değerinde " + car.Description);
